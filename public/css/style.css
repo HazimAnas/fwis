@@ -14,6 +14,10 @@ a {
 	text-decoration: none;
 }
 
+table a {
+	font-size: 1em;
+}
+
 a:hover {
 	color: gray;
 }
@@ -23,11 +27,12 @@ nav a {
 	font-size: 1em;
 	text-decoration: none;
 	float: right;
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 nav a:hover {
 	color: #657278;
+	border-bottom: 1px solid #5FCF80;
 }
 
 #header {
@@ -61,7 +66,7 @@ nav a:hover {
 
 #navigation {
 	width: 100%;
-	min-height: 2em;
+	min-height: 2.2em;
 	line-height: 2em;
 	z-index: 999999;
 	position: fixed;
@@ -70,6 +75,18 @@ nav a:hover {
 	padding-bottom: 0.5em;
 	background-color: #FFFFFF;
 	vertical-align: middle;
+}
+
+#footer {
+	display: block;
+	width: 100%;
+	min-height: 2em;
+	line-height: 2em;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
 }
 
 .wrapper {
@@ -82,11 +99,17 @@ nav a:hover {
 	max-width: 960px;
 	margin-right: auto;
 	margin-left: auto;
-	color: black;
 }
 
 #content-wrapper a {
 	color: black;
+}
+
+.box {
+	float: left;
+	margin-left:10%;
+	margin-top: 10px;
+	text-align: center;
 }
 
 #content-wrapper .button {
@@ -103,10 +126,10 @@ nav a:hover {
   	z-index: 9999;
 }
 .text-vertical-center {
-display: table-cell;
-vertical-align: middle;
-text-align: center;
-}
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	}
 
 .button {
 	border: 2px solid white;
@@ -122,22 +145,17 @@ text-align: center;
 .panel {
 	padding: 1em;
 	background-color: rgba(0, 0, 0, .8);
-	max-width: 500px;
+	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-form {
-
-}
-
-input[type=submit] {
+input[type=submit] , input[type=button] {
 	padding:5px 15px;
 	border:0 none;
 	cursor:pointer;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	background-color: white;
 	color: black;
 }
 
@@ -146,14 +164,19 @@ input[type=text] {
 }
 
 .circle {
+	color: #FFF;
 	background-color: #FFF;
-	float: left;
-	margin-left:10%;
-	margin-top: 10px;
 	border-radius: 50%;
 	width: 200px;
 	height: 200px; 
+	overflow: hidden;
+	position: relative;
 	/* width and height can be anything, as long as they're equal */
+}
+
+.circle img {
+	max-width: 100%;
+	max-width: 100%;
 }
 
 #circles-wrapper {
@@ -169,4 +192,9 @@ input[type=text] {
 
 td, th {
 	padding: 5px;
+}
+
+.red {
+	background-color: #E2062C;
+	float: right;
 }

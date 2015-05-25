@@ -32,11 +32,11 @@
                 <td align="left"><input type="text" name="name" /></td>
               </tr>
               <tr>
-                <td align="right">Amount</td>
+                <td align="right">Amount(kg)</td>
                 <td align="left"><input type="text" name="amount" /></td>
               </tr>
               <tr>
-                <td align="right">Min Amount</td>
+                <td align="right">Min Amount(kg)</td>
                 <td align="left"><input type="text" name="min_amount" /></td>
               </tr>
               <tr>
@@ -49,5 +49,6 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+<?php
+  include_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/fwis/footer.php');
+?>

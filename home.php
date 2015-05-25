@@ -7,16 +7,30 @@
   <body>
 <?php
   include_once('navigation.php'); 
-?> 
+?>   <div class="content">
       <div id="content-wrapper">
         <div id="circles-wrapper">
-          <div class="circle">
+          <div class="box">
+            <div class="circle">
+              <img src="public/img/hazim.jpg" />
+            </div>
+            <h3>Hazim</h3>
           </div>
-          <div class="circle">
+          <div class="box">
+            <div class="circle">
+              <img src="public/img/lokhman.jpg" />
+            </div>
+            <h3>Lokhman</h3>
           </div>
-          <div class="circle">
+          <div class="box">
+            <div class="circle">
+              <img src="public/img/aiman.jpg" />
+            </div>
+            <h3>Aiman</h3>
           </div>
         </div>
       </div>
-  </body>
-</html>
+    </div>
+<?php
+  include_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/fwis/footer.php');
+?>

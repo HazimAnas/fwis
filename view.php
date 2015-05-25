@@ -33,11 +33,11 @@
                 <td align="left"><input type="text" name="name" value=<?php echo $fruit['name']?> /></td>
               </tr>
               <tr>
-                <td align="right">Amount</td>
+                <td align="right">Amount(kg)</td>
                 <td align="left"><input type="text" name="amount" value=<?php echo $fruit['amount']?> /></td>
               </tr>
               <tr>
-                <td align="right">Min Amount</td>
+                <td align="right">Min Amount(kg)</td>
                 <td align="left"><input type="text" name="min_amount" value=<?php echo $fruit['min_amount']?> /></td>
               </tr>
               <tr>
@@ -47,9 +47,14 @@
               <input type='hidden' name='id' value=<?php echo $fruit['id']?> />
             </table>
             <input type="submit" value="Update"/>
+            <input class="red" form="delete-form" type="submit" value="Delete" />
           </form>
+            <form id="delete-form" action="delete-action.php" method="POST">
+              <input type='hidden' name='id' value=<?php echo $fruit['id']?> />
+           </form>
         </div>
       </div>
     </div>
-  </body>
-</html>
+<?php
+  include_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/fwis/footer.php');
+?>

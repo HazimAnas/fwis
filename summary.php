@@ -13,16 +13,18 @@
     <div class="content">
 
 <div class="text-vertical-center">
-        <h1>Fruit(s) List.</h1> 
+        <h1>Fruit(s) Summary.</h1> 
         <br>
         <div class="panel">
           <table>
-            <tr><th>Num</th><th>Name</th><th>Amount</th><th>Minimum Amount</th><th>Price</th><th>Total Value</th><th>Status</th></tr>
+            <tr><th>Num</th><th>Name</th><th>Amount(kg)</th><th>Minimum Amount(kg)</th><th>Price(RM/kg)</th><th>Total Value(RM)</th><th>Status</th></tr>
           <?php
             $i=1;
             $r=0;
             $o=0;
             $g=0;
+            $total=0;
+            $cost=0;
             foreach ($array as $row => $val) {
                 echo "
                 <tr>
@@ -33,6 +35,10 @@
                   <td>".$val['price']."</td>
                   <td>".$val['amount']*$val['price']."</td>
                   <td>";
+
+                  $total += $val['amount'];
+                  $cost += $val['amount']*$val['price'];
+
                       if($val['amount'] <= $val['min_amount']){
                         echo 'Red';
                         $r++;
@@ -50,15 +56,24 @@
                 $i++;
             }
           ?>
-          <tr><td colspan='' align="left">          
-            <h3>Status Summary</h3>
+          <tr><td colspan='2' align="left">          
+            <h4>Status Summary</h3>
               <p><pre>Green  : <?php echo $g; ?></pre></p>
               <p><pre>Orange : <?php echo $o; ?></pre></p>
               <p><pre>Red    : <?php echo $r; ?></pre></p>
+            </td>
+         <td colspan='2' align="left">          
+            <h4>Total Fruit</h3>
+              <pre> <?php echo $total; ?></pre></p>
+            <h4>Total Cost</h3>
+              <pre> <?php echo $cost; ?></pre></p>
             </td></tr>
           </table>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+<?php
+  include_once(realpath($_SERVER["DOCUMENT_ROOT"]).'/fwis/footer.php');
+?>
